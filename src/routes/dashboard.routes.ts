@@ -3,6 +3,7 @@ import { noOfOrders } from "../controller/dashboard/card/noOfOrders.controller";
 import { posDeliveredOrders } from "../controller/dashboard/card/posDeliveredOrders.controller";
 import { posFetchedOrders } from "../controller/dashboard/card/posFetchedOrders.controller";
 import { orderList } from "../controller/dashboard/orderList.controller";
+import { getOrderById } from "../controller/dashboard/getOrderById.controller";
 import { outletwiseOrders } from "../controller/dashboard/outletwiseOrders.controller";
 import { todaysTop10Amount } from "../controller/dashboard/piecard/today/todaysTop10Amount.controller";
 import { todaysTop10Qty } from "../controller/dashboard/piecard/today/todaysTop10Qty.controller";
@@ -18,6 +19,7 @@ router.get("/posFetchedOrders", posFetchedOrders);
 
 // order List
 router.get("/orderList", orderList);
+router.get("/getOrderById/:id", getOrderById);
 router.get("/outletwiseOrders", outletwiseOrders);
 
 

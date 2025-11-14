@@ -12,7 +12,7 @@ export const orderList = async (req: Request, res: Response) => {
     const { rows } = await pool.query(query);
 
     // rows[0] contains the JSON returned by the PostgreSQL function
-    const orders = rows?.[0] || [];
+    const orders = rows || [];
 
     return res.status(200).json(orders);
   } catch (error) {
