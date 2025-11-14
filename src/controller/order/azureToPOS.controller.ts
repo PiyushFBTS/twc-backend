@@ -10,6 +10,10 @@ export const azureToPOS = async (req: Request, res: Response) => {
   try {
     const { storeid: merchantRefId } = req.body;
 
+    console.log("REQ BODY:", req.body);
+
+
+
     if (!merchantRefId) {
       return res.status(400).json({ error: "storeid (merchantRefId) is required" });
     }
