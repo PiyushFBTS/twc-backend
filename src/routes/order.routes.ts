@@ -11,7 +11,7 @@ router.post("/appToAzure", appToAzure);
 router.post("/upToAzure", upToAzure);
 router.post("/status", orderStatus);
 
-//GET
+//POST
 router.post("/azureToPOS", azureToPOS);
 
 

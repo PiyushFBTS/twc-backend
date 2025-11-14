@@ -13,6 +13,7 @@ const app = express();
 // ✅ Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // login
 app.use("/api/auth", authRoutes);
