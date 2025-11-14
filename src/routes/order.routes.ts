@@ -12,7 +12,7 @@ router.post("/upToAzure", upToAzure);
 router.post("/status", orderStatus);
 
 //GET
-router.get("/azureToPOS", azureToPOS);
+router.post("/azureToPOS", azureToPOS);
 
 
 export default router;
