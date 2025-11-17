@@ -16,7 +16,6 @@ const STATUS_ORDER: Record<string, number> = {
 export const orderStatus = async (req: Request, res: Response) => {
   try {
     const { orderId, ReceiptNo, orderStatus, storeId } = req.body;
-    console.log("orderStatus --> req.body", req.body);
 
     // Validate required fields
     if (!orderId || !ReceiptNo || !orderStatus || !storeId) {
@@ -139,8 +138,6 @@ export const orderStatus = async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     console.error("POST /orders/status error:", error);
-    return res
-      .status(500)
-      .json({ message: "Internal Server Error", error: String(error) });
+    return res.status(500).json({ message: "Internal Server Error", error: String(error) });
   }
 };
