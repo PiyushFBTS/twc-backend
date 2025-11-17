@@ -16,6 +16,7 @@ const STATUS_ORDER: Record<string, number> = {
 export const orderStatus = async (req: Request, res: Response) => {
   try {
     const { orderId, ReceiptNo, orderStatus, storeId } = req.body;
+    console.log("orderStatus --> req.body", req.body);
 
     // Validate required fields
     if (!orderId || !ReceiptNo || !orderStatus || !storeId) {

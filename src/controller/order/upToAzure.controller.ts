@@ -14,6 +14,7 @@ export const upToAzure = async (req: Request, res: Response) => {
   try {
     const { customer, order } = req.body;
     const details = order.details;
+    console.log("upToAzure --> req.body", req.body);
 
     await client.query("BEGIN");
 
