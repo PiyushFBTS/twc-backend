@@ -271,6 +271,8 @@ export const upToAzure = async (req: Request, res: Response) => {
   } catch (error) {
     await client.query("ROLLBACK");
     console.error("POST /uploToAzure error:", error);
+    console.log("POST /uploToAzure error:", error);
+
     return res.status(500).json({ error: "Internal Server Error" });
   } finally {
     client.release();

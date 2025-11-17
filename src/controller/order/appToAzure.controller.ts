@@ -225,6 +225,7 @@ export const appToAzure = async (req: Request, res: Response) => {
     return res.status(201).json({ message: "Order inserted successfully" });
   } catch (error) {
     await client.query("ROLLBACK");
+    console.log("POST /api/orders/insertOrder error:", error);
     console.error("POST /api/orders/insertOrder error:", error);
     return res.status(500).json({ error: "Internal Server Error" });
   } finally {
