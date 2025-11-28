@@ -121,7 +121,7 @@ export const upToAzure = async (req: Request, res: Response) => {
       let discount = 0;
       if (isMainItem) {
         discount = item.discount || 0;
-      } else if (item.merchant_id === "DUMMY") {
+      } else if ((String(item.merchant_id).toLowerCase() === "dummy") ) {
         const firstOption = item.options_to_add?.[0];
         discount = firstOption?.id === subItem.id ? item.discount || 0 : 0;
       } else {
@@ -168,7 +168,7 @@ export const upToAzure = async (req: Request, res: Response) => {
     const itemIdToLineNo = new Map();
 
     for (const item of order.items) {
-      const isDummyItem = item.merchant_id === "DUMMY";
+      const isDummyItem = String(item.merchant_id).toLowerCase() === "dummy";
       let mainItemLineNo = 0;
 
       if (!isDummyItem) {
