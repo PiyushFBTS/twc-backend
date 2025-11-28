@@ -71,7 +71,7 @@ export const appToAzure = async (req: Request, res: Response) => {
     const itemIdToLineNo = new Map();
 
     for (const item of order.items) {
-      const isDummyItem = item.merchant_id === "DUMMY";
+      const isDummyItem = String(item.merchant_id).toLowerCase() === "dummy";
       let dummyBaseLineNo = 0;
 
       if (!isDummyItem) {
